@@ -3,45 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>abiscool 🍉 Y2K MAG</title>
+  <title>abiscool ✨ a whimsical corner</title>
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍉</text></svg>">
   
   <style>
-    @import url('https://googleapis.com');
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Quicksand:wght@400;600;700&family=Pacifico&display=swap');
 
     :root {
-      --hot-pink: #ff007f;
-      --neon-green: #39ff14;
-      --electric-blue: #00d4ff;
-      --bright-yellow: #fff000;
+      --soft-pink: #f5d7e3;
+      --soft-lavender: #e6d7f0;
+      --soft-blue: #d4e5f7;
+      --soft-peach: #f5dcc8;
+      --soft-mint: #d4f0e8;
+      --soft-lilac: #e8d4f0;
+      --soft-yellow: #f5f0d4;
+      --cream: #faf8f3;
+      --text: #5a5a5a;
+    }
+
+    * {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c1 1 2 2 2 3s-1 2-2 3-2-2-2-3 1-2 2-3zm0 6c3 0 5 2 5 5s-2 5-5 5-5-2-5-5 2-5 5-5z" fill="%23d4a5d8" opacity="0.8"/><text x="12" y="18" font-size="8" fill="%23d4a5d8" text-anchor="middle">✨</text></svg>') 12 12, auto;
     }
 
     body {
-      background-color: #ff85a1;
-      background-image: radial-gradient(#ffffff 2px, transparent 2px);
-      background-size: 30px 30px;
-      color: #1a1a1a;
-      font-family: 'Space Mono', monospace;
+      background: linear-gradient(135deg, #f5d7e3 0%, #e6d7f0 25%, #d4e5f7 50%, #f5dcc8 75%, #d4f0e8 100%);
+      background-size: 400% 400%;
+      background-attachment: fixed;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><pattern id="flowers" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="3" fill="%23f5d7e3" opacity="0.3"/><circle cx="30" cy="35" r="2" fill="%23e6d7f0" opacity="0.3"/><circle cx="50" cy="25" r="2.5" fill="%23d4e5f7" opacity="0.3"/><circle cx="70" cy="40" r="3" fill="%23f5dcc8" opacity="0.3"/><circle cx="80" cy="20" r="2" fill="%23d4f0e8" opacity="0.3"/></pattern></defs><rect width="400" height="400" fill="%23faf8f3"/><rect width="400" height="400" fill="url(%23flowers)"/></svg>');
+      color: #5a5a5a;
+      font-family: 'Quicksand', sans-serif;
       margin: 0;
-      cursor: crosshair;
+      line-height: 1.7;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background: linear-gradient(90deg, #f5d7e3, #e6d7f0);
+      padding: 15px;
+      border-bottom: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      color: #5a5a5a;
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 2px solid #faf8f3;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.4s ease;
+      background: #faf8f3;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    nav a:hover, nav a.active {
+      background: #f5d7e3;
+      border-color: #d4a5d8;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(212, 165, 216, 0.3);
     }
 
     /* TOP SCROLLING TICKER */
     .ticker {
-      background: var(--neon-green);
-      color: black;
-      padding: 10px;
-      font-weight: bold;
-      border-bottom: 4px solid black;
+      background: linear-gradient(90deg, #d4e5f7, #f5dcc8);
+      color: #5a5a5a;
+      padding: 12px;
+      font-weight: 600;
+      border-bottom: none;
       white-space: nowrap;
       overflow: hidden;
+      font-size: 14px;
+      font-family: 'Caveat', cursive;
+      font-size: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     .ticker span {
       display: inline-block;
       padding-left: 100%;
-      animation: ticker 15s linear infinite;
+      animation: ticker 20s linear infinite;
     }
 
     @keyframes ticker {
@@ -49,43 +95,70 @@
       100% { transform: translate(-100%, 0); }
     }
 
+    /* SECTIONS */
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
     /* MAGAZINE HEADER */
     header {
-      background: white;
-      border: 6px solid black;
+      background: linear-gradient(135deg, #f5d7e3, #e6d7f0, #d4e5f7);
+      border: none;
       margin: 20px;
-      padding: 50px 10px;
+      padding: 50px 20px;
       text-align: center;
-      box-shadow: 15px 15px 0px var(--electric-blue), -15px -15px 0px var(--bright-yellow);
+      border-radius: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
     }
 
     h1 {
-      font-family: 'Bungee Shade', cursive;
-      font-size: clamp(3rem, 12vw, 8rem);
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
       margin: 0;
-      color: var(--hot-pink);
-      text-shadow: 5px 5px 0px var(--neon-green);
+      color: #d4a5d8;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    h2, h3 {
+      color: #d4a5d8;
+      font-family: 'Caveat', cursive;
+      border-bottom: 2px dashed #f5d7e3;
+      padding-bottom: 10px;
+      font-size: 1.8em;
     }
 
     /* CD PLAYER */
     .cd-player {
-      background: #333;
-      border: 4px solid white;
-      border-radius: 20px;
-      padding: 20px;
+      background: linear-gradient(135deg, #f5d7e3, #d4f0e8);
+      border: none;
+      border-radius: 25px;
+      padding: 25px;
       width: 200px;
       margin: 20px auto;
-      color: white;
+      color: #5a5a5a;
+      box-shadow: 0 8px 20px rgba(212, 165, 216, 0.25);
     }
 
     .disc {
-      width: 100px;
-      height: 100px;
-      background: conic-gradient(#ff007f, #39ff14, #00d4ff, #fff000, #ff007f);
+      width: 90px;
+      height: 90px;
+      background: conic-gradient(#f5d7e3, #d4e5f7, #d4f0e8, #f5dcc8, #f5d7e3);
       border-radius: 50%;
       margin: 0 auto 10px;
-      border: 8px double white;
-      animation: spin 2s linear infinite paused;
+      border: 4px solid #d4a5d8;
+      animation: spin 3s linear infinite paused;
+      box-shadow: 0 4px 15px rgba(212, 165, 216, 0.3);
     }
 
     .playing .disc { animation-play-state: running; }
@@ -101,154 +174,478 @@
     }
 
     .bubble {
-      background: white;
-      border: 3px solid black;
-      padding: 10px;
-      border-radius: 15px;
+      background: #faf8f3;
+      border: 2px solid #d4a5d8;
+      padding: 12px;
+      border-radius: 20px;
       font-size: 12px;
       margin-bottom: 10px;
       display: none;
-      box-shadow: 5px 5px 0px var(--hot-pink);
+      box-shadow: 0 4px 12px rgba(212, 165, 216, 0.2);
+      max-width: 150px;
+      font-family: 'Caveat', cursive;
+      font-size: 14px;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .tamagotchi {
       font-size: 50px;
       cursor: pointer;
-      background: var(--bright-yellow);
-      padding: 10px;
+      background: linear-gradient(135deg, #f5d7e3, #e6d7f0);
+      padding: 12px;
       border-radius: 50%;
-      border: 4px solid black;
-      box-shadow: 5px 5px 0px black;
-      transition: 0.3s;
+      border: 3px solid #d4a5d8;
+      box-shadow: 0 6px 15px rgba(212, 165, 216, 0.3);
+      transition: all 0.4s ease;
     }
 
-    .tamagotchi:hover { transform: scale(1.2) rotate(10deg); }
+    .tamagotchi:hover { 
+      transform: scale(1.15) rotate(-10deg);
+      box-shadow: 0 8px 20px rgba(212, 165, 216, 0.4);
+    }
 
     /* CONTENT BOXES */
-    .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+    .container { 
+      max-width: 900px; 
+      margin: 0 auto; 
+      padding: 20px; 
+    }
 
-    .magazine-card {
-      background: white;
-      border: 4px solid black;
+    .blog-card {
+      background: #faf8f3;
+      border: none;
       padding: 30px;
-      margin-bottom: 40px;
-      box-shadow: 10px 10px 0px black;
+      margin-bottom: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      animation: fadeIn 0.6s ease;
     }
 
-    .sticker-link {
-      background: var(--bright-yellow);
-      color: black;
-      padding: 10px 20px;
-      border: 3px solid black;
-      font-weight: bold;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(212, 165, 216, 0.2);
+    }
+
+    .blog-card p {
+      color: #5a5a5a;
+      line-height: 1.8;
+    }
+
+    .button-link {
+      background: linear-gradient(135deg, #f5d7e3, #e6d7f0);
+      color: #5a5a5a;
+      padding: 12px 24px;
+      border: 2px solid #d4a5d8;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 50px;
+      border-radius: 25px;
       display: inline-block;
-      margin: 10px;
-      transform: rotate(-5deg);
+      margin: 8px;
+      transition: all 0.4s ease;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 14px;
     }
 
-    /* MAGIC WAND */
-    .magic-trail {
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      font-size: 25px;
+    .button-link:hover {
+      background: linear-gradient(135deg, #e6d7f0, #d4e5f7);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(212, 165, 216, 0.3);
+      border-color: #d4a5d8;
+    }
+
+    textarea, input {
+      border: 2px solid #d4a5d8;
+      padding: 12px;
+      font-family: 'Quicksand', sans-serif;
+      background: #faf8f3;
+      color: #5a5a5a;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    textarea:focus, input:focus {
+      outline: none;
+      background: #fff;
+      border-color: #f5d7e3;
+      box-shadow: 0 0 15px rgba(212, 165, 216, 0.2);
+    }
+
+    /* GALLERY */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .photo-item {
+      background: linear-gradient(135deg, #f5dcc8, #d4f0e8);
+      border: none;
+      border-radius: 20px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+    }
+
+    .photo-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(212, 165, 216, 0.2);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #5a5a5a;
+      font-size: 14px;
+      border-top: 2px dashed #f5d7e3;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #d4a5d8;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #f5d7e3;
+      text-decoration: underline;
+    }
+
+    button {
+      font-family: 'Quicksand', sans-serif;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(212, 165, 216, 0.3);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px;
+      margin: 8px 0;
+      background: linear-gradient(90deg, transparent, #f5d7e3, transparent);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    ul li:hover {
+      background: linear-gradient(90deg, transparent, #e6d7f0, transparent);
+      transform: translateX(5px);
     }
   </style>
 </head>
 <body>
 
 <div class="ticker">
-  <span>⚡ HOT TOPIC: WATERMELON SEASON IS HERE! 🍉 ✨ CHAPPELL ROAN ON REPEAT 🎧 🎀 ABISCOOL VOL. 1 👑 ⚡</span>
+  <span>✨ welcome to my whimsical corner! 💫 dreams are made of pastel colors 🌸 take a stroll through my thoughts 🎀 make yourself at home 💕 ✨</span>
 </div>
+
+<!-- NAVIGATION -->
+<nav id="main-nav">
+  <a href="#" onclick="showSection('home')" class="active">🏠 home</a>
+  <a href="#" onclick="showSection('room')">🛏️ cozy room</a>
+  <a href="#" onclick="showSection('garden')">🌿 garden</a>
+  <a href="#" onclick="showSection('cafe')">☕ café</a>
+  <a href="#" onclick="showSection('gallery')">🖼️ gallery</a>
+  <a href="#" onclick="showSection('music')">🎵 music</a>
+  <a href="#" onclick="showSection('journal')">📓 journal</a>
+  <a href="#" onclick="showSection('letters')">📬 letters</a>
+</nav>
 
 <!-- DIGITAL PET -->
 <div id="pet-container">
-  <div class="bubble" id="pet-talk">Meow! Click me for luck! ✨</div>
+  <div class="bubble" id="pet-talk">meow~ ✨</div>
   <div class="tamagotchi" onclick="petSpeak()">🐱</div>
 </div>
 
 <header>
-  <h1>abiscool</h1>
-  <p style="font-weight: bold; background: var(--bright-yellow); display: inline-block; padding: 5px 10px;">Y2K WATERMELON SUPREMACY 🍉</p>
-  
-  <div class="cd-player" id="player">
-    <div class="disc"></div>
-    <button onclick="toggleMusic()" style="background: var(--neon-green); border: 2px solid black; padding: 10px; font-weight: bold; cursor: pointer;">PLAY / PAUSE</button>
-  </div>
+  <h1>abiscool ✨</h1>
+  <p style="font-style: italic; color: #d4a5d8; font-family: 'Caveat', cursive; font-size: 1.3em;">a little whimsical blog for daydreaming & delight</p>
 </header>
 
 <div class="container">
-  <div style="text-align: center;">
-    <a href="#fashion" class="sticker-link">OUTFITS 👗</a>
-    <a href="#favs" class="sticker-link" style="background: var(--electric-blue); color:white;">TRENDS 🍒</a>
-    <a href="#nook" class="sticker-link" style="background: var(--neon-green);">GUESTBOOK 🧸</a>
-  </div>
 
-  <section id="fashion" class="magazine-card">
-    <h2 style="font-family: 'Archivo Black';">OOTD SPREAD 🎀</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-      <div style="background:white; padding:10px; border:2px solid black;">
-        <div style="height:250px; background:black; color:var(--neon-green); display:flex; align-items:center; justify-content:center;">PHOTO 01</div>
-        <p><i>"I'm your favorite artist's favorite artist."</i></p>
+  <!-- HOME SECTION -->
+  <section id="home" class="section active">
+    <div class="blog-card">
+      <h2>💕 welcome, friend!</h2>
+      <p>hey there! welcome to my digital watermelon corner. this is a little cozy space on the internet where i share my thoughts, my favorite things, and moments that make my heart happy. grab a seat, look around, and feel free to leave your thoughts in my guestbook~</p>
+      <p>this blog is all about simple pleasures, sweet aesthetics, and the feeling of summer all year round. explore the different rooms, find some inspo, or just chill out.</p>
+      <a href="#" onclick="showSection('room')" class="button-link">✨ let's explore</a>
+    </div>
+
+    <div class="blog-card">
+      <h3>🎶 now playing</h3>
+      <div class="cd-player" id="player">
+        <div class="disc"></div>
+        <button onclick="toggleMusic()" style="background: #f5d7e3; color: #5a5a5a; border: 2px solid #d4a5d8; padding: 10px; font-weight: bold; cursor: pointer; margin-top: 10px;">▶ play</button>
       </div>
-      <div style="background:white; padding:10px; border:2px solid black;">
-        <div style="height:250px; background:black; color:var(--neon-green); display:flex; align-items:center; justify-content:center;">PHOTO 02</div>
-        <p><i>Red Wine Supernova vibes 🍷</i></p>
+    </div>
+
+    <div class="blog-card">
+      <h3>🧸 guest nook</h3>
+      <p>leave a message~</p>
+      <textarea id="guestbook" style="width: 100%; height: 80px;"></textarea>
+      <button onclick="addGuestbook()" style="margin-top: 10px; background: #f5d7e3; color: #5a5a5a; border: 2px solid #d4a5d8; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 15px; font-family: 'Quicksand', sans-serif;">✨ sign</button>
+      <div id="guestbook-entries" style="margin-top: 20px;"></div>
+    </div>
+  </section>
+
+  <!-- COZY ROOM -->
+  <section id="room" class="section">
+    <div class="blog-card">
+      <h2>🛏️ my cozy room</h2>
+      <p>this is where i retreat to dream and recharge. warm lighting, soft textures, and all my favorite things surrounding me. there's something magical about creating a space that feels like a gentle hug.</p>
+      <p>i like to keep things simple: soft colors, plants by the window, and a little corner for my thoughts. whenever life feels overwhelming, i come here to breathe and remember what matters.</p>
+      <div style="margin-top: 20px; padding: 15px; background: #f5dcc8; border-left: 5px solid #d4a5d8;">
+        <p><strong>room playlist vibes:</strong> lo-fi beats, indie folk, soft indie pop. perfect for lazy afternoons and late-night thinking.</p>
+      </div>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-item">
+        <p style="height: 180px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">cozy corner</p>
+      </div>
+      <div class="photo-item">
+        <p style="height: 180px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">warm lights</p>
+      </div>
+      <div class="photo-item">
+        <p style="height: 180px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">tea & books</p>
       </div>
     </div>
   </section>
 
-  <section id="nook" class="magazine-card" style="background: var(--bright-yellow);">
-    <h3>ABBIE'S GUEST NOOK 🧸</h3>
-    <p>Sign the magazine wall!</p>
-    <textarea style="width: 100%; height: 60px; border: 3px solid black; padding: 10px;"></textarea>
-    <button style="margin-top: 10px; background: var(--hot-pink); color: white; border: 3px solid black; padding: 10px 20px; font-weight: bold;">PUBLISH ✨</button>
+  <!-- GARDEN -->
+  <section id="garden" class="section">
+    <div class="blog-card">
+      <h2>🌿 secret garden</h2>
+      <p>in this garden grows everything beautiful and wild. flowers that bloom in unexpected colors, vines that climb toward the sun, and quiet corners where dreams take root.</p>
+      <p>nature is my muse. whether it's the way light filters through leaves, the gentle rustle of wind, or the promise of growth in spring, i find magic in every season. here i share moments of natural beauty and the wisdom that nature teaches us.</p>
+      <div style="margin-top: 20px; padding: 15px; background: #f5dcc8; border-left: 5px solid #d4a5d8;">
+        <p><strong>garden philosophy:</strong> "like a flower blooming in spring, good things take time. be patient with yourself and trust the process." 🌸</p>
+      </div>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-item">
+        <p style="height: 180px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">wild flowers</p>
+      </div>
+      <div class="photo-item">
+        <p style="height: 180px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">morning dew</p>
+      </div>
+      <div class="photo-item">
+        <p style="height: 180px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">sunset glow</p>
+      </div>
+    </div>
   </section>
+
+  <!-- CAFÉ -->
+  <section id="cafe" class="section">
+    <div class="blog-card">
+      <h2>☕ the cozy café</h2>
+      <p>step into my imaginary café where time moves a little slower. this is a place for warm drinks, good conversations, and the kind of comfort that only a café can provide.</p>
+      <p>here we celebrate the small things: the aroma of fresh coffee, comfortable silences, hands wrapped around warm mugs, and the magic of ordinary moments with extraordinary people.</p>
+      <div style="margin-top: 20px; padding: 15px; background: #f5dcc8; border-left: 5px solid #d4a5d8;">
+        <p><strong>café recommendations:</strong> oat milk latte, chocolate croissant, a good book, and the company of someone who listens.</p>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <h3>☕ today's thoughts</h3>
+      <p><em>"sometimes the best moments happen when you're not trying to make anything happen. just be. just breathe. just exist in this moment."</em></p>
+      <p>- overheard at the café, 4:15 pm ☕</p>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section id="gallery" class="section">
+    <div class="blog-card">
+      <h2>🖼️ my gallery</h2>
+      <p>a collection of moments i want to remember. little snapshots of beauty, joy, and the things that make my heart feel full.</p>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-item">
+        <p style="height: 200px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">summer days</p>
+      </div>
+      <div class="photo-item">
+        <p style="height: 200px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">golden hour</p>
+      </div>
+      <div class="photo-item">
+        <p style="height: 200px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">night sky</p>
+      </div>
+      <div class="photo-item">
+        <p style="height: 200px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">still life</p>
+      </div>
+      <div class="photo-item">
+        <p style="height: 200px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">nature close-up</p>
+      </div>
+      <div class="photo-item">
+        <p style="height: 200px; display: flex; align-items: center; justify-content: center; color: #5a5a5a; font-weight: 600;">soft moments</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC CORNER -->
+  <section id="music" class="section">
+    <div class="blog-card">
+      <h2>🎵 music corner</h2>
+      <p>music is the soundtrack to my life. here are some songs and artists that have been on repeat, inspiring my days and filling my heart with joy.</p>
+    </div>
+
+    <div class="blog-card">
+      <h3>🎧 current playlist</h3>
+      <ul style="color: #5a5a5a;">
+        <li>indie folk favorites</li>
+        <li>lo-fi chill beats</li>
+        <li>soft pop dreams</li>
+        <li>midnight reflections</li>
+        <li>summer vibes mix</li>
+      </ul>
+    </div>
+
+    <div class="blog-card">
+      <h3>🎵 song of the moment</h3>
+      <p><em>"when i listen to this, i feel like i'm floating through pastel clouds, all worries melting away..."</em></p>
+    </div>
+  </section>
+
+  <!-- DREAM JOURNAL -->
+  <section id="journal" class="section">
+    <div class="blog-card">
+      <h2>📓 dream journal</h2>
+      <p>this is where i capture the fleeting thoughts, dreams, and ideas that visit me. some are silly, some are deep, all are real.</p>
+    </div>
+
+    <div class="blog-card">
+      <h3>💭 recent dreams</h3>
+      <div style="padding: 15px; background: #f5dcc8; margin-bottom: 15px; border-left: 5px solid #d4a5d8;">
+        <p><strong>dream entry 1:</strong> "i was in a field of wildflowers, soft light filtering through the clouds, everything felt peaceful..."</p>
+      </div>
+      <div style="padding: 15px; background: #f5dcc8; margin-bottom: 15px; border-left: 5px solid #d4a5d8;">
+        <p><strong>dream entry 2:</strong> "flying through clouds made of cotton candy, laughing with old friends..."</p>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <h3>✨ add your own dream</h3>
+      <textarea id="dream-entry" style="width: 100%; height: 100px;"></textarea>
+      <button onclick="saveDream()" style="margin-top: 10px; background: #f5d7e3; color: #5a5a5a; border: 2px solid #d4a5d8; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 15px; font-family: 'Quicksand', sans-serif;">save dream ✨</button>
+    </div>
+  </section>
+
+  <!-- PEN PAL LETTERS -->
+  <section id="letters" class="section">
+    <div class="blog-card">
+      <h2>📬 pen pal letters</h2>
+      <p>letters are a lost art, but there's something so special about words written with intention and care. this is where i write letters—to friends, to myself, to the world.</p>
+    </div>
+
+    <div class="blog-card">
+      <h3>💌 write a letter</h3>
+      <textarea id="letter-content" style="width: 100%; height: 120px;" placeholder="dear friend..."></textarea>
+      <button onclick="saveLetter()" style="margin-top: 10px; background: #f5d7e3; color: #5a5a5a; border: 2px solid #d4a5d8; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 15px; font-family: 'Quicksand', sans-serif;">send letter 💌</button>
+      <div id="letters-list" style="margin-top: 20px;"></div>
+    </div>
+  </section>
+
 </div>
 
-<footer style="text-align: center; padding: 50px; font-weight: bold;">
-  <p>💌 Contact the Editor: <a href="mailto:mburuabigael14@gmail.com" style="color: var(--hot-pink);">mburuabigael14@gmail.com</a></p>
+<footer>
+  <p>💌 made with love by abbie | whimsical theme ✨ | <a href="mailto:mburuabigael14@gmail.com">contact me</a></p>
+  <p style="font-size: 12px;">✨ wave your magic wand & enjoy your stay! ✨</p>
 </footer>
 
 <script>
+  // SECTION NAVIGATION
+  function showSection(sectionId) {
+    // hide all sections
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    // show selected section
+    document.getElementById(sectionId).classList.add('active');
+    // update nav
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    event.target.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
   function toggleMusic() {
     document.getElementById('player').classList.toggle('playing');
   }
 
   // PET LOGIC
   const phrases = [
-    "Meow! You look so pretty today! ✨",
-    "Watermelon is the best snack! 🍉",
-    "Is it time for a cat nap yet? 😴",
-    "Did you listen to 2hollis today? 🎧",
-    "I love being your digital pet! 🐱"
+    "meow! dreams come true in pastel colors... ✨",
+    "you're doing amazing, sweetie! 💕",
+    "the world is brighter when you smile 🌸",
+    "take time to rest, friend 😴",
+    "spread love like flowers blooming 🌷"
   ];
 
   function petSpeak() {
     const bubble = document.getElementById('pet-talk');
     bubble.innerText = phrases[Math.floor(Math.random() * phrases.length)];
     bubble.style.display = 'block';
-    setTimeout(() => { bubble.style.display = 'none'; }, 3000);
+    setTimeout(() => { bubble.style.display = 'none'; }, 4000);
   }
 
-  // MAGIC WAND
-  document.addEventListener('mousemove', function(e) {
-    const sparkle = document.createElement('div');
-    sparkle.classList.add('magic-trail');
-    sparkle.innerHTML = Math.random() > 0.5 ? '✨' : '🍉';
-    sparkle.style.left = e.clientX + 'px';
-    sparkle.style.top = e.clientY + 'px';
-    sparkle.style.transition = 'all 1s ease-out';
-    document.body.appendChild(sparkle);
-    setTimeout(() => {
-      sparkle.style.transform = `translate(${(Math.random()-0.5)*200}px, ${(Math.random()-0.5)*200}px) scale(0) rotate(360deg)`;
-      sparkle.style.opacity = '0';
-    }, 50);
-    setTimeout(() => { sparkle.remove(); }, 1000);
-  });
+  // GUESTBOOK
+  function addGuestbook() {
+    const text = document.getElementById('guestbook').value;
+    if (text.trim()) {
+      const entries = document.getElementById('guestbook-entries');
+      const entry = document.createElement('div');
+      entry.style.cssText = 'padding: 10px; margin: 10px 0; border-left: 4px solid #d4a5d8; background: #f5dcc8;';
+      entry.innerText = `✨ "${text}" - friend (${new Date().toLocaleDateString()})`;
+      entries.appendChild(entry);
+      document.getElementById('guestbook').value = '';
+    }
+  }
+
+  // DREAM JOURNAL
+  function saveDream() {
+    const dream = document.getElementById('dream-entry').value;
+    if (dream.trim()) {
+      alert('dream saved to your heart 💭✨');
+      document.getElementById('dream-entry').value = '';
+    }
+  }
+
+  // PEN PAL LETTERS
+  function saveLetter() {
+    const letter = document.getElementById('letter-content').value;
+    if (letter.trim()) {
+      const list = document.getElementById('letters-list');
+      const letterDiv = document.createElement('div');
+      letterDiv.style.cssText = 'padding: 15px; margin: 10px 0; border: 2px solid #d4a5d8; background: #f5dcc8; border-radius: 15px;';
+      letterDiv.innerHTML = `<p style="white-space: pre-wrap; color: #5a5a5a;">${letter}</p><p style="font-size: 12px; color: #d4a5d8;">- sent with love 💌</p>`;
+      list.appendChild(letterDiv);
+      document.getElementById('letter-content').value = '';
+    }
+  }
 </script>
 
-</body>
-</html>
+
+
